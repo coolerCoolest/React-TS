@@ -1,0 +1,9 @@
+.test {
+  font-size: 20px;
+}
+
+$colorTest: red;
+
+:export {
+  color: $colorTest;
+}
