@@ -4,6 +4,10 @@ import viteLogo from '/vite.svg'
 import './App.scss'
 //引入scss对象
 import scssTest from './test.module.scss'
+import { Link, Routes, Route } from 'react-router-dom'
+
+import About from '@/views/about/about.tsx'
+import User from '@/views/user/user.tsx'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -30,6 +34,16 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <div className={scssTest.test} style={{ color: scssTest.color }}>scss引入测试</div>
+      <Link to={{
+        pathname: '/about',
+      }}>about</Link>
+      <Link to={{
+        pathname: '/user',
+      }}>user</Link>
+      <Routes>
+        <Route path="/about" element={<About />} />
+        <Route path="/user" element={<User />} />
+      </Routes>
     </>
   )
 }
