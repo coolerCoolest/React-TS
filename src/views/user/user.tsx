@@ -1,9 +1,11 @@
-function user() {
+
+function User() {
+  
   return (
     <div>
-      测试路由页面user
+      123
     </div>
   )
 }
 
-export default user
+export default User
