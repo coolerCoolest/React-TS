@@ -2,18 +2,19 @@ import { createSlice, configureStore } from "@reduxjs/toolkit";
 
 const counterSlice = createSlice({
   name: "counter",
-  initialState: 0,
+  initialState: 1,
   reducers: {
     increment: (state: number) => {
-      console.log("increment");
-      state += 1;
+      console.log(state, "increment");
+      return state += 1
     },
     decrement: (state: number) => {
       console.log("decrement");
-      state -= 1;
+      return state -= 1;
     },
   },
 })
+
 
 console.log(counterSlice, 123);
 
@@ -24,7 +25,6 @@ const store = configureStore({
     counter: counterSlice.reducer
   }
 })
-console.log("store changed", store.getState(), 222);
 
 store.subscribe(() => {
   console.log("store changed", store.getState());
