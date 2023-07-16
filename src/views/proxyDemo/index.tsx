@@ -3,7 +3,7 @@
 // }
 import { useState } from "react";
 
-const ProxyDemo = () => {
+const ProxyDemo: React.FC = () => {
   const proxyObj = new Proxy({
     name: '名称'
   }, {
